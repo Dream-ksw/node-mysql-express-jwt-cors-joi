@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.staticfile.org/jquery/3.6.4/jquery.min.js"></script>
+  
+</head>
+<body>
+  <button id="btnGET">GET</button>
+  <button id="btnPOST">POST</button>
+  <button id="script">SCRIPT</button>
+
+  <script>
+    // function fn(res) {
+    //   console.log(res);
+    // }
+
+    $(function() {
+      $('#btnGET').on('click', function() {
+        $.ajax({
+          type: 'GET',
+          url: 'http://127.0.0.1/api/get',
+          data: {name: 'zs', age: 10},
+          success: function(res) {
+            console.log(res);
+          }
+        })
+      })
+      $('#btnPOST').on('click', function() {
+        $.ajax({
+          type: 'post',
+          url: 'http://127.0.0.1/api/post',
+          data: {name: '水浒传', author: '施耐庵'},
+          success: function(res) {
+            console.log(res);
+          }
+        })
+      })
+      // $('#script').on('click', function() {
+      //   $.ajax({
+      //     type: 'get',
+      //     url: 'http://127.0.0.1/api/jsonp',
+      //     dataType: 'jsonp',
+      //     success: function(res) {
+      //       console.log(res);
+      //     }
+      //   })
+      // })
+    })
+    
+  </script>
+</body>
+</html>
